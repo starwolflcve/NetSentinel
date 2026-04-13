@@ -1,6 +1,8 @@
 package dashboard;
 
+import model.Alert;
 import model.LogEntry;
+import model.Severity;
 
 import java.util.*;
 
@@ -58,5 +60,59 @@ public class Dashboard {
             .forEach(entry -> System.out.println("  " + entry.getKey() + " → " + entry.getValue()));
 
         System.out.println("\n========================================\n");
+    }
+
+    public void displayAlerts(List<Alert> alerts) {
+        System.out.println("\n========================================");
+        System.out.println("        NETSENTINEL — MENACES          ");
+        System.out.println("========================================\n");
+
+        displayAlertsBySeverity(alerts);
+
+        // Résumé
+        System.out.println("\n--- RÉSUMÉ DES ALERTES ---");
+        System.out.println("Total d'alertes: " + alerts.size());
+        System.out.println("Alertes CRITICAL: " + countAlertsBySeverity(alerts, Severity.CRITICAL));
+        System.out.println("Alertes HIGH: " + countAlertsBySeverity(alerts, Severity.HIGH));
+        System.out.println("Alertes MEDIUM: " + countAlertsBySeverity(alerts, Severity.MEDIUM));
+        System.out.println("Alertes LOW: " + countAlertsBySeverity(alerts, Severity.LOW));
+        System.out.println("\n========================================\n");
+    }
+
+    private void displayAlertsBySeverity(List<Alert> alerts) {
+        if (alerts.isEmpty()) {
+            System.out.println("✅ Aucune menace détectée!\n");
+            return;
+        }
+
+        // Afficher les alertes CRITICAL
+        System.out.println("\n🚨 ALERTES CRITICAL:");
+        alerts.stream()
+            .filter(alert -> alert.getSeverity() == Severity.CRITICAL)
+            .forEach(alert -> System.out.println("  " + alert));
+
+        // Afficher les alertes HIGH
+        System.out.println("\n⚠️  ALERTES HIGH:");
+        alerts.stream()
+            .filter(alert -> alert.getSeverity() == Severity.HIGH)
+            .forEach(alert -> System.out.println("  " + alert));
+
+        // Afficher les alertes MEDIUM
+        System.out.println("\n⚡ ALERTES MEDIUM:");
+        alerts.stream()
+            .filter(alert -> alert.getSeverity() == Severity.MEDIUM)
+            .forEach(alert -> System.out.println("  " + alert));
+
+        // Afficher les alertes LOW
+        System.out.println("\n🔍 ALERTES LOW:");
+        alerts.stream()
+            .filter(alert -> alert.getSeverity() == Severity.LOW)
+            .forEach(alert -> System.out.println("  " + alert));
+    }
+
+    private long countAlertsBySeverity(List<Alert> alerts, Severity severity) {
+        return alerts.stream()
+            .filter(alert -> alert.getSeverity() == severity)
+            .count();
     }
 }
