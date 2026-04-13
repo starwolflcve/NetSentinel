@@ -1,5 +1,8 @@
-package main.java.model;
+package model;
 
-public class Severity {
-    
+public enum Severity {
+    LOW,
+    MEDIUM,
+    HIGH,
+    CRITICAL
 }

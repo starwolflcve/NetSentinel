@@ -1,4 +1,4 @@
-package main.java.report;
+package report;
 
 public class ReportGenerator {
     

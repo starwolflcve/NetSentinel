@@ -1,4 +1,4 @@
-package main.java.detector;
+package detector;
 
 public class ThreatDetector {
     
