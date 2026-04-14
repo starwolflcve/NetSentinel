@@ -1,0 +1,274 @@
+═══════════════════════════════════════════════════════════
+           NETSENTINEL — RAPPORT D'ANALYSE SÉCURITÉ        
+       Généré le : 2026-04-14 12:24:47
+═══════════════════════════════════════════════════════════
+
+━━━ 1. RÉSUMÉ EXÉCUTIF ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Nombre total d'alertes : 62
+
+  LOW        : 0
+  MEDIUM     : 62
+  HIGH       : 0
+  CRITICAL   : 0
+
+Top 5 des IPs les plus suspectes :
+  172.16.6.12        → 4 alerte(s)
+  172.16.2.5         → 3 alerte(s)
+  10.0.0.48          → 3 alerte(s)
+  172.16.6.5         → 3 alerte(s)
+  172.16.9.16        → 3 alerte(s)
+
+━━━ 2. TIMELINE DES INCIDENTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-03-15 12:07:26] MEDIUM     SCAN_PATH    IP: 172.16.6.12        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 13:02:11] MEDIUM     SCAN_PATH    IP: 172.16.3.7         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 13:56:39] MEDIUM     SCAN_PATH    IP: 172.16.6.18        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 14:01:06] MEDIUM     SCAN_PATH    IP: 172.16.2.5         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 14:15:12] MEDIUM     SCAN_PATH    IP: 172.16.5.13        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 14:16:57] MEDIUM     SCAN_PATH    IP: 172.16.7.3         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 14:31:56] MEDIUM     SCAN_PATH    IP: 172.16.2.5         — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 14:51:31] MEDIUM     SCAN_PATH    IP: 10.0.0.3           — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 15:08:44] MEDIUM     SCAN_PATH    IP: 172.16.8.15        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 15:09:13] MEDIUM     SCAN_PATH    IP: 172.16.6.5         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 15:13:26] MEDIUM     SCAN_PATH    IP: 172.16.9.4         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 15:14:07] MEDIUM     SCAN_PATH    IP: 172.16.9.16        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 16:01:39] MEDIUM     SCAN_PATH    IP: 172.16.6.12        — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 16:14:32] MEDIUM     SCAN_PATH    IP: 172.16.9.16        — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 16:24:02] MEDIUM     SCAN_PATH    IP: 192.168.1.18       — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 16:35:39] MEDIUM     SCAN_PATH    IP: 192.168.1.36       — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 16:46:24] MEDIUM     SCAN_PATH    IP: 172.16.6.13        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 16:53:13] MEDIUM     SCAN_PATH    IP: 10.0.0.13          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 17:00:47] MEDIUM     SCAN_PATH    IP: 192.168.1.36       — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 17:01:28] MEDIUM     SCAN_PATH    IP: 10.0.0.49          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 17:08:20] MEDIUM     SCAN_PATH    IP: 172.16.6.18        — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 17:11:57] MEDIUM     SCAN_PATH    IP: 172.16.6.16        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 17:49:08] MEDIUM     SCAN_PATH    IP: 172.16.3.12        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 17:51:53] MEDIUM     SCAN_PATH    IP: 10.0.0.38          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 17:53:33] MEDIUM     SCAN_PATH    IP: 172.16.6.12        — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier: /sitemap.…
+[2025-03-15 18:10:35] MEDIUM     SCAN_PATH    IP: 172.16.4.17        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 18:11:43] MEDIUM     SCAN_PATH    IP: 192.168.1.4        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 18:19:03] MEDIUM     SCAN_PATH    IP: 10.0.0.3           — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 18:55:20] MEDIUM     SCAN_PATH    IP: 192.168.1.29       — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 18:55:58] MEDIUM     SCAN_PATH    IP: 172.16.5.2         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 18:57:33] MEDIUM     SCAN_PATH    IP: 172.16.3.7         — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 19:10:19] MEDIUM     SCAN_PATH    IP: 172.16.4.17        — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 19:42:59] MEDIUM     SCAN_PATH    IP: 172.16.5.1         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 19:47:00] MEDIUM     SCAN_PATH    IP: 172.16.6.2         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 19:51:25] MEDIUM     SCAN_PATH    IP: 172.16.9.15        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 19:54:51] MEDIUM     SCAN_PATH    IP: 192.168.1.18       — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 20:07:04] MEDIUM     SCAN_PATH    IP: 172.16.2.5         — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier: /robots.t…
+[2025-03-15 20:11:46] MEDIUM     SCAN_PATH    IP: 172.16.1.7         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 20:18:55] MEDIUM     SCAN_PATH    IP: 10.0.0.10          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 20:24:29] MEDIUM     SCAN_PATH    IP: 172.16.9.16        — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier: /robots.t…
+[2025-03-15 20:56:28] MEDIUM     SCAN_PATH    IP: 10.0.0.48          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 21:28:53] MEDIUM     SCAN_PATH    IP: 172.16.6.13        — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 21:37:42] MEDIUM     SCAN_PATH    IP: 10.0.0.20          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 21:44:22] MEDIUM     SCAN_PATH    IP: 172.16.6.12        — Scan de vulnérabilités détecté : accès à 6 chemins suspects (dernier: /sitemap.…
+[2025-03-15 21:47:19] MEDIUM     SCAN_PATH    IP: 172.16.1.15        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 21:49:41] MEDIUM     SCAN_PATH    IP: 10.0.0.48          — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 21:51:43] MEDIUM     SCAN_PATH    IP: 172.16.6.5         — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 22:14:21] MEDIUM     SCAN_PATH    IP: 172.16.8.18        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 22:20:59] MEDIUM     SCAN_PATH    IP: 10.0.0.2           — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 22:30:45] MEDIUM     SCAN_PATH    IP: 10.0.0.40          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 22:43:14] MEDIUM     SCAN_PATH    IP: 172.16.9.18        — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 22:46:00] MEDIUM     SCAN_PATH    IP: 10.0.0.33          — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 22:50:59] MEDIUM     SCAN_PATH    IP: 10.0.0.48          — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier: /sitemap.…
+[2025-03-15 22:51:29] MEDIUM     SCAN_PATH    IP: 172.16.6.2         — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 23:06:20] MEDIUM     SCAN_PATH    IP: 172.16.2.7         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /sitemap.…
+[2025-03-15 23:08:49] MEDIUM     SCAN_PATH    IP: 172.16.9.4         — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 23:24:24] MEDIUM     SCAN_PATH    IP: 172.16.6.5         — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier: /robots.t…
+[2025-03-15 23:27:22] MEDIUM     SCAN_PATH    IP: 172.16.9.3         — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 23:28:23] MEDIUM     SCAN_PATH    IP: 10.0.0.38          — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /robots.t…
+[2025-03-15 23:51:03] MEDIUM     SCAN_PATH    IP: 192.168.1.33       — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+[2025-03-15 23:51:57] MEDIUM     SCAN_PATH    IP: 172.16.3.12        — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier: /sitemap.…
+[2025-03-15 23:57:36] MEDIUM     SCAN_PATH    IP: 192.168.1.45       — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier: /robots.t…
+
+━━━ 3. DÉTAIL PAR IP SUSPECTE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IP: 172.16.6.12         |  Alertes: 4  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier:… (count: 5)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 6 chemins suspects (dernier:… (count: 6)
+
+IP: 172.16.2.5          |  Alertes: 3  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier:… (count: 5)
+
+IP: 10.0.0.48           |  Alertes: 3  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier:… (count: 5)
+
+IP: 172.16.6.5          |  Alertes: 3  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier:… (count: 5)
+
+IP: 172.16.9.16         |  Alertes: 3  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 5 chemins suspects (dernier:… (count: 5)
+
+IP: 172.16.9.4          |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 10.0.0.3            |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 192.168.1.36        |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 172.16.6.13         |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 172.16.6.2          |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 172.16.3.7          |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 172.16.4.17         |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 172.16.6.18         |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 10.0.0.38           |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 192.168.1.18        |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 172.16.3.12         |  Alertes: 2  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 4 chemins suspects (dernier:… (count: 4)
+
+IP: 10.0.0.49           |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 192.168.1.29        |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 192.168.1.4         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 10.0.0.40           |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.2.7          |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.1.7          |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 192.168.1.33        |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.5.1          |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 10.0.0.2            |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.5.2          |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.8.15         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.6.16         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.7.3          |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.8.18         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 10.0.0.20           |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.9.3          |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 192.168.1.45        |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.9.18         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 10.0.0.13           |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.9.15         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.5.13         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 10.0.0.33           |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 10.0.0.10           |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+IP: 172.16.1.15         |  Alertes: 1  |  Sévérité max: MEDIUM
+  Types déclenchés : [SCAN_PATH]
+    [MEDIUM] SCAN_PATH — Scan de vulnérabilités détecté : accès à 3 chemins suspects (dernier:… (count: 3)
+
+━━━ 4. RECOMMANDATIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Aucune recommandation spécifique — continuer la surveillance standard.
+
+═══════════════════════════════════════════════════════════
+                   FIN DU RAPPORT                          
+═══════════════════════════════════════════════════════════
