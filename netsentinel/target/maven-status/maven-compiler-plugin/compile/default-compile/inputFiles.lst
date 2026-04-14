@@ -6,6 +6,8 @@
 /home/ptite/NetSentinel/netsentinel/src/main/java/detector/ThreatDetector.java
 /home/ptite/NetSentinel/netsentinel/src/main/java/dashboard/Dashboard.java
 /home/ptite/NetSentinel/netsentinel/src/main/java/detector/DDoSDetector.java
+/home/ptite/NetSentinel/netsentinel/src/main/java/com/netsentinel/AnalysisController.java
+/home/ptite/NetSentinel/netsentinel/src/main/java/com/netsentinel/NetSentinelApplication.java
 /home/ptite/NetSentinel/netsentinel/src/main/java/detector/AlertCorrelator.java
 /home/ptite/NetSentinel/netsentinel/src/main/java/detector/BruteForceDetector.java
 /home/ptite/NetSentinel/netsentinel/src/main/java/model/Severity.java

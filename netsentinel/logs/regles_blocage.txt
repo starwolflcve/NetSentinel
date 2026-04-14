@@ -1,0 +1,41 @@
+# ═══════════════════════════════════════════
+# NETSENTINEL — RÈGLES DE BLOCAGE AUTOMATIQUES
+# Généré le : 2026-04-14 19:50:21
+# IPs classées HIGH ou CRITICAL
+# ═══════════════════════════════════════════
+
+# --- iptables (Linux) ---
+iptables -A INPUT -s 91.240.118.50 -j DROP
+iptables -A INPUT -s 198.51.100.10 -j DROP
+iptables -A INPUT -s 103.21.23.152 -j DROP
+iptables -A INPUT -s 185.220.101.33 -j DROP
+iptables -A INPUT -s MULTIPLE_IPS -j DROP
+iptables -A INPUT -s 203.0.113.50 -j DROP
+iptables -A INPUT -s 91.240.118.51 -j DROP
+iptables -A INPUT -s 203.0.113.51 -j DROP
+iptables -A INPUT -s 109.70.100.30 -j DROP
+
+# --- nginx (deny directive) ---
+deny 91.240.118.50;
+deny 198.51.100.10;
+deny 103.21.23.152;
+deny 185.220.101.33;
+deny MULTIPLE_IPS;
+deny 203.0.113.50;
+deny 91.240.118.51;
+deny 203.0.113.51;
+deny 109.70.100.30;
+
+# --- Apache (.htaccess) ---
+Order Deny,Allow
+Deny from 91.240.118.50
+Deny from 198.51.100.10
+Deny from 103.21.23.152
+Deny from 185.220.101.33
+Deny from MULTIPLE_IPS
+Deny from 203.0.113.50
+Deny from 91.240.118.51
+Deny from 203.0.113.51
+Deny from 109.70.100.30
+
+# 9 IP(s) à bloquer.

@@ -1,1 +1,17 @@
+detector/ThreatDetector.class
 detector/AlertCorrelator$1.class
+detector/ScanDetector.class
+report/ReportGenerator.class
+com/netsentinel/AnalysisController.class
+parser/LogParser.class
+com/netsentinel/Main.class
+model/LogEntry.class
+detector/WhitelistManager.class
+dashboard/Dashboard.class
+detector/DDoSDetector.class
+detector/SQLInjectionDetector.class
+detector/AlertCorrelator.class
+model/Alert.class
+detector/BruteForceDetector.class
+model/Severity.class
+com/netsentinel/NetSentinelApplication.class

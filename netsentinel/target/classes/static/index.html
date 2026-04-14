@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetSentinel - Analyse de logs</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="card">
+            <h1>🛡️ NetSentinel</h1>
+            <p class="subtitle">Analyse de logs réseau et génération d’un rapport de sécurité</p>
+
+            <div class="drop-zone" id="drop-zone">
+                <span id="drop-zone-text">
+                    Glissez-déposez votre fichier de logs ici<br>
+                    ou cliquez pour le sélectionner
+                </span>
+                <input type="file" id="file-input" accept=".txt,.log" hidden>
+            </div>
+
+            <p id="file-name" class="file-name"></p>
+
+            <div class="actions">
+                <button id="btn-analyze" class="btn btn-analyze" disabled>Analyser</button>
+                <button id="btn-download" class="btn btn-download" disabled>Télécharger</button>
+            </div>
+
+            <p id="status" class="status"></p>
+        </section>
+    </main>
+
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const dropZoneText = document.getElementById('drop-zone-text');
+        const fileInput = document.getElementById('file-input');
+        const fileName = document.getElementById('file-name');
+        const btnAnalyze = document.getElementById('btn-analyze');
+        const btnDownload = document.getElementById('btn-download');
+        const status = document.getElementById('status');
+
+        let selectedFile = null;
+        let reportBlob = null;
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', (event) => {
+            handleFiles(event.target.files);
+        });
+
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropZone.classList.add('over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('over');
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropZone.classList.remove('over');
+            handleFiles(event.dataTransfer.files);
+        });
+
+        function handleFiles(files) {
+            if (!files || files.length === 0) return;
+
+            selectedFile = files[0];
+            fileName.textContent = `Fichier sélectionné : ${selectedFile.name}`;
+            dropZoneText.innerHTML = 'Fichier prêt à être analysé';
+            btnAnalyze.disabled = false;
+            btnDownload.disabled = true;
+            reportBlob = null;
+            status.textContent = '';
+        }
+
+        btnAnalyze.addEventListener('click', async () => {
+            if (!selectedFile) return;
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            btnAnalyze.disabled = true;
+            btnDownload.disabled = true;
+            status.textContent = 'Analyse en cours...';
+
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur pendant l’analyse');
+                }
+
+                reportBlob = await response.blob();
+                status.textContent = 'Analyse terminée. Le rapport est prêt.';
+                btnDownload.disabled = false;
+            } catch (error) {
+                status.textContent = 'Erreur lors de l’analyse du fichier.';
+            } finally {
+                btnAnalyze.disabled = false;
+            }
+        });
+
+        btnDownload.addEventListener('click', () => {
+            if (!reportBlob) return;
+
+            const url = window.URL.createObjectURL(reportBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'rapport_securite.txt';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
