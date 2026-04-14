@@ -58,35 +58,55 @@ Le projet couvre les notions de détection d'intrusion (IDS), d'analyse de logs,
 
 ## Structure du projet
 
-```
+```text
 netsentinel/
-├── src/
-│   ├── main/java/com/netsentinel/
-│   │   ├── Main.java                        # Point d'entrée
-│   │   ├── model/
-│   │   │   ├── LogEntry.java                # Modèle d'une ligne de log
-│   │   │   ├── Alert.java                   # Modèle d'une alerte
-│   │   │   └── Severity.java                # Enum : LOW, MEDIUM, HIGH, CRITICAL
-│   │   ├── parser/
-│   │   │   └── LogParser.java               # Parsing regex des logs Apache
-│   │   ├── dashboard/
-│   │   │   └── Dashboard.java               # Affichage des statistiques
-│   │   ├── detector/
-│   │   │   ├── ThreatDetector.java          # Interface commune
-│   │   │   ├── BruteForceDetector.java      # Détection brute-force
-│   │   │   ├── SqlInjectionDetector.java    # Détection injection SQL
-│   │   │   ├── DDoSDetector.java            # Détection DDoS
-│   │   │   └── ScanDetector.java            # Détection scan de vulnérabilités
-│   │   └── report/
-│   │       └── ReportGenerator.java         # Génération du rapport
-│   └── test/java/com/netsentinel/
-│       └── NetSentinelTest.java             # Tests unitaires JUnit 5
 ├── logs/
-│   ├── access_log_clean.txt                 # Logs normaux (~10 000 lignes)
-│   └── access_log_attack.txt                # Logs avec attaques cachées
-├── whitelist.txt                            # IPs en liste blanche
-├── rapport_securite.txt                     # Rapport généré (output)
-└── pom.xml
+│   ├── access_log_attack.txt            # Logs avec attaques cachées
+│   ├── access_log_clean.txt             # Logs normaux (~10 000 lignes)
+│   ├── rapport_securite.txt             # Rapport de sécurité généré (output)
+│   ├── regles_blocage.txt               # Règles iptables générées (output)
+│   └── whitelist.txt                    # IPs en liste blanche
+├── pom.xml                              # Configuration Maven & Spring Boot
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   ├── com/netsentinel/
+    │   │   │   ├── AnalysisController.java  # Contrôleur API pour l'interface Web
+    │   │   │   ├── Main.java                # Pipeline métier d'analyse
+    │   │   │   └── NetSentinelApplication.java # Point d'entrée Spring Boot
+    │   │   ├── dashboard/
+    │   │   │   └── Dashboard.java           # Affichage des statistiques
+    │   │   ├── detector/
+    │   │   │   ├── AlertCorrelator.java     # Système de scoring et corrélation
+    │   │   │   ├── BruteForceDetector.java  # Détection force brute
+    │   │   │   ├── DDoSDetector.java        # Détection DDoS
+    │   │   │   ├── SQLInjectionDetector.java# Détection injection SQL
+    │   │   │   ├── ScanDetector.java        # Détection scan de vulnérabilités
+    │   │   │   ├── ThreatDetector.java      # Interface commune des détecteurs
+    │   │   │   └── WhitelistManager.java    # Filtrage des faux positifs
+    │   │   ├── model/
+    │   │   │   ├── Alert.java               # Modèle d'une alerte
+    │   │   │   ├── LogEntry.java            # Modèle d'une ligne de log
+    │   │   │   └── Severity.java            # Enum : LOW, MEDIUM, HIGH, CRITICAL
+    │   │   ├── parser/
+    │   │   │   └── LogParser.java           # Parsing regex des logs Apache
+    │   │   └── report/
+    │   │       └── ReportGenerator.java     # Génération du rapport textuel
+    │   └── resources/
+    │       ├── application.properties       # Configuration serveur (limite d'upload)
+    │       └── static/                      # Fichiers de l'interface web
+    │           ├── css/
+    │           │   └── style.css            # Styles de la page
+    │           └── index.html               # Interface utilisateur (Drag & Drop)
+    └── test/
+        └── java/
+            ├── detector/                    # Tests unitaires des détecteurs
+            │   ├── AlertCorrelatorTest.java
+            │   ├── BruteForceDetectorTest.java
+            │   ├── SQLInjectionDetectorTest.java
+            │   └── WhitelistManagerTest.java
+            └── parser/                      # Tests unitaires du parser
+                └── LogParserTest.java
 ```
 
 ---
@@ -115,19 +135,29 @@ cd NetSentinel/netsentinel
 
 **2. Compiler le projet :**
 ```bash
-mvn compile
+mvn clean compile
 ```
-
-**3. Placer les fichiers de logs** dans le dossier `logs/` à la racine du projet Maven.
 
 ---
 
 ## Utilisation
 
-### Lancer l'analyse complète
+Le projet dispose d'une interface web permettant de charger facilement les fichiers de logs et de récupérer le rapport généré.
+
+### 1. Démarrer le serveur local
+Lancez l'application Spring Boot avec Maven :
 ```bash
-mvn compile exec:java -Dexec.mainClass="com.netsentinel.Main"
+mvn spring-boot:run
 ```
+
+### 2. Accéder à l'interface web
+Une fois le serveur démarré, ouvrez votre navigateur web et accédez à l'adresse suivante :
+👉 **http://localhost:8080**
+
+### 3. Analyser un fichier
+- Glissez-déposez votre fichier `access_log.txt` (ou cliquez pour le sélectionner) dans la zone prévue à cet effet.
+- Cliquez sur le bouton **Analyser**.
+- Une fois l'analyse terminée, cliquez sur **Télécharger** pour récupérer automatiquement votre `rapport_securite.txt`.
 
 ### Lancer les tests unitaires
 ```bash
