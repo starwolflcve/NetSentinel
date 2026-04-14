@@ -1,5 +1,5 @@
-/Users/lacavequentin/NetSentinel/netsentinel/src/test/java/detector/WhitelistManagerTest.java
-/Users/lacavequentin/NetSentinel/netsentinel/src/test/java/detector/SQLInjectionDetectorTest.java
-/Users/lacavequentin/NetSentinel/netsentinel/src/test/java/parser/LogParserTest.java
-/Users/lacavequentin/NetSentinel/netsentinel/src/test/java/detector/AlertCorrelatorTest.java
-/Users/lacavequentin/NetSentinel/netsentinel/src/test/java/detector/BruteForceDetectorTest.java
+/home/ptite/NetSentinel/netsentinel/src/test/java/detector/BruteForceDetectorTest.java
+/home/ptite/NetSentinel/netsentinel/src/test/java/parser/LogParserTest.java
+/home/ptite/NetSentinel/netsentinel/src/test/java/detector/SQLInjectionDetectorTest.java
+/home/ptite/NetSentinel/netsentinel/src/test/java/detector/AlertCorrelatorTest.java
+/home/ptite/NetSentinel/netsentinel/src/test/java/detector/WhitelistManagerTest.java

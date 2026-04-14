@@ -6,10 +6,10 @@ com/netsentinel/AnalysisController.class
 parser/LogParser.class
 com/netsentinel/Main.class
 model/LogEntry.class
-dashboard/Dashboard.class
 detector/WhitelistManager.class
-detector/SQLInjectionDetector.class
+dashboard/Dashboard.class
 detector/DDoSDetector.class
+detector/SQLInjectionDetector.class
 detector/AlertCorrelator.class
 model/Alert.class
 detector/BruteForceDetector.class
